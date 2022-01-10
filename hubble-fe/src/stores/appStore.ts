@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-12-28 10:53:00
+ * @LastEditTime: 2022-01-10 16:59:06
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /hubble-fe/src/stores/appStore.ts
+ */
 import { createContext } from 'react';
 import { observable, action, flow } from 'mobx';
 import axios, { AxiosResponse } from 'axios';
@@ -8,6 +16,12 @@ export class AppStore {
   @observable currentId: number | null = null;
   @observable currentTab: string = 'graph-management';
   @observable errorMessage = '';
+  @observable tenant: string = '';
+  @observable graphs: string = 'test_1';
+  @observable menuObj: object = {
+    c_key: '1',
+    f_key: 'sub1'
+  };
 
   @observable colorList: string[] = [];
 
@@ -28,6 +42,21 @@ export class AppStore {
   @action.bound
   setUser(user: string) {
     this.user = user;
+  }
+
+  @action.bound
+  setTenant(tenant: string) {
+    this.tenant = tenant;
+  }
+
+  @action.bound
+  setGraphs(graphs: string) {
+    this.graphs = graphs;
+  }
+
+  @action.bound
+  setMenuObj(menuObj: object) {
+    this.menuObj = menuObj;
   }
 
   @action

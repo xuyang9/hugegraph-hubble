@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-12-28 10:59:07
+ * @LastEditTime: 2022-01-05 14:20:11
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /hubble-fe/src/components/common/AppBar.tsx
+ */
 import React, { useCallback } from 'react';
 import { observer } from 'mobx-react';
 import { useLocation } from 'wouter';
@@ -17,16 +25,17 @@ const AppBar: React.FC = observer(() => {
   return (
     <nav className="navigator">
       <div className="navigator-logo" onClick={setRoute('/')}></div>
-      <div className="navigator-items">
+      {/* <div className="navigator-items">
         <div
           className="navigator-item active"
           onClick={setRoute('/graph-management')}
         >
-          <span>图管理</span>
+          <span>图管理1</span>
         </div>
-      </div>
+      </div> */}
       <div className="navigator-additions">
-        {/* <span>fe-v1.6.1-rc.20</span> */}
+        <span className="navigator-additions-img"></span>
+        <span>v_xuyang04</span>
       </div>
     </nav>
   );
